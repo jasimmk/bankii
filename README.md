@@ -46,9 +46,9 @@ Please create an issue and explain the problem, and your approach to solve it, a
 ## Supported banks
 
 
-| Bank                  | Country | Swift    | Steps                                     |
-| --------------------- | ------- | -------- | ----------------------------------------- |
-| Federal Bank          | IN      | FDRLINBB | Download the statement file in xls format |
-| State Bank of India   | IN      | SBININBB | Download the statement file in csv format |
-| Kotak Bank            | IN      | KKBKINBB | Download the statement file in csv format |
-| Emirates Islamic Bank | AE      | MEBLAEAD | Download the statement file in excel format. Open it on excel and save again as Excel 97 format                                          |
+| Bank                  | Country | Swift    | Steps                                                                                           |
+|-----------------------|---------|----------|-------------------------------------------------------------------------------------------------|
+| Federal Bank          | IN      | FDRLINBB | Download the statement file in xls format                                                       |
+| State Bank of India   | IN      | SBININBB | Download the statement file in csv format                                                       |
+| Kotak Bank            | IN      | KKBKINBB | Download the statement file in csv format                                                       |
+| Emirates Islamic Bank | AE      | MEBLAEAD | Download the statement file in excel format. Open it on excel and save again as Excel 97 format |

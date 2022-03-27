@@ -152,6 +152,9 @@ class Processor:
             report_data = bank_report_itr[1]
             ext = report_data.get('ext')
             bank_class: typing.Type[BaseBank] = bank_report_itr[2]
+            if bank_class is None:
+                logger.warning('Unsupported bank report and file extension: {}'.format(report_data))
+                continue
             parser_options = bank_class.parser_options
             reader = self.rm.add_reader(file_path, ext, parser_options)
 
@@ -175,13 +178,16 @@ class Processor:
                         'debit_amount': debit_amount, 'balance_amount': balance_amount,
                         'statement_reference': statement_reference, 'file_id': file_id
                     })
+        if statment.is_empty():
+            logger.warning('No statement data found to output')
+            return
         statment.sort_statements()
-        #logger.debug('Output: \n: {}'.format('\n'.join([str(x) for x in statment.to_csv()])))
+        # logger.debug('Output: \n: {}'.format('\n'.join([str(x) for x in statment.to_csv()])))
         # Output data
         # TODO: Better manage the output; CReate folders first
         if not output_file.endswith(output_format):
             output_file = '{}.{}'.format(output_file, output_format)
-        if output_format.lower() == 'csv':
+        if output_format.lower() == 'csv' :
             writer = self.wm.get_writer(output_format.lower())
             writer_inst = writer(destination_folder, output_file)
             writer_inst.write_file(statment.to_csv())
