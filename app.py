@@ -14,11 +14,11 @@ def setup_logger():
                         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 
-def main(args):
+def main(cli_args):
     setup_logger()
     p = Processor()
     p.initialize()
-    p.process(args.source, args.destination, args.output_format, args.output_file)
+    p.process(cli_args.source, cli_args.destination, cli_args.output_format, cli_args.output_file)
     p.finalize()
 
 

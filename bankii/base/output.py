@@ -70,6 +70,12 @@ class Statement:
     def __init__(self):
         self.statements = []
 
+    def len(self):
+        return len(self.statements)
+
+    def is_empty(self):
+        return len(self.statements) == 0
+
     def add_statement_line(self, **statement_line_args):
         statement_line = StatementLine(**statement_line_args)
         self.statements.append(statement_line)
