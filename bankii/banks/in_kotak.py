@@ -42,7 +42,7 @@ class InKotalBank(BaseBank):
     def get_debit_amount(cls, row: typing.List) -> float:
         try:
             amount = to_float(row[5])
-            if row[7] == 'DR':
+            if row[8] == 'DR':
                 return amount
             raise ValueError
         except ValueError:
@@ -52,7 +52,7 @@ class InKotalBank(BaseBank):
     def get_credit_amount(cls, row: typing.List) -> float:
         try:
             amount = to_float(row[6])
-            if row[7] == 'CR':
+            if row[8] == 'CR':
                 return amount
             raise ValueError
         except ValueError:
