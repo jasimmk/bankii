@@ -81,6 +81,8 @@ class XLSRowReader(BaseRowReader):
 
     def initialize(self):
         file_absolute = str(self._file_path.absolute())
+        xlrd.xlsx.ensure_elementtree_imported(False, None)
+        xlrd.xlsx.Element_has_iter = True
         work_book = xlrd.open_workbook(file_absolute)
         # TODO: Any bank give report on second sheet?
         self._file_reader = work_book.sheet_by_index(0)

@@ -3,7 +3,7 @@ import typing
 
 
 class BaseBank:
-    report_file_pattern = r'^(?P<swift_code>[A-Z]{8})__(?P<currency>[a-zA-Z0-9]{3})__(?P<account_no>[a-zA-Z0-9\-]+)__(?P<file_id>[a-zA-Z0-9\-]+).(?P<ext>\w+)$'
+    report_file_pattern = r'^(?P<swift_code>[A-Z]{8})__(?P<currency>[a-zA-Z0-9]{3})__(?P<account_no>[a-zA-Z0-9\-]+)__(?P<file_id>[a-zA-Z0-9\-\_]+).(?P<ext>\w+)$'
     report_file_ext = 'csv'
     country = 'IN'
     name = 'BaseBank'
