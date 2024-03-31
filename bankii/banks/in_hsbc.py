@@ -29,14 +29,14 @@ class InFederalBank(BaseBank):
     @classmethod
     def get_debit_amount(cls, row: typing.List) -> float:
         try:
-            return to_float(row[3])
+            return to_float(row[4])
         except ValueError:
             return float(0.)
 
     @classmethod
     def get_credit_amount(cls, row: typing.List) -> float:
         try:
-            return to_float(row[4])
+            return to_float(row[3])
         except ValueError:
             return float(0.)
 
